@@ -1,0 +1,28 @@
+{{#cars}}
+<nav>
+  <a href="/">Back to the garage!</a>
+</nav>
+<div>
+  <img src="{{url}}" alt="" />
+  <h3>{{make}}</h3>
+  <p>{{model}}</p>
+  <p>{{year}}</p>
+  <br>
+  <a href="/cars/{{_id}}/edit"><button>Edit</button></a>
+  <br>
+  <br>
+  {{#each comments}}
+  <p>Comments: {{this}}</p>
+  <div>
+    <form action="/cars/{{../_id}}/comments/delete" method="post">
+      <input class="remove" type="submit" value="X">
+    </form>
+  </div>
+  {{/each}}
+  <form action="/cars/{{_id}}/comments" method="post">
+    <label for="comments">Add a comment: </label>
+    <input type="text" name="comments" value="">
+    <input class="submit" type="submit" value="submit">
+  </form>
+</div>
+{{/cars}}

@@ -1,0 +1,26 @@
+<h1>Edit my car details!</h1>
+<br>
+<br>
+<a href="/">Back to the Garage</a>
+<br>
+<br>
+<form action="/cars/{{_id}}/update" method="post">
+  <label for="url">Change picture: </label>
+  <input type="url" name="url" value="{{url}}">
+  <br>
+  <br>
+  <label for="make">Make: </label>
+  <input type="text" name="make" value="{{make}}">
+  <br>
+  <br>
+  <label for="model">Model: </label>
+  <input type="text" name="model" value="{{model}}">
+  <br>
+  <br>
+  <label for="year">Year: </label>
+  <input type="text" name="year" value="{{year}}">
+  <br>
+  <br>
+  <br>
+  <input class="submit" type="submit" value="submit">
+</form>

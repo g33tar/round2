@@ -1,0 +1,23 @@
+
+<nav>
+  <h1>Welcome to my garage!</h1>
+  <a href="/cars/new">Add more cars!</a>
+</nav>
+
+<br>
+<br>
+{{#each cars}}
+<article class="cars">
+  <div>
+    <a href="/cars/{{_id}}"><img src="{{url}}" alt="" /></a>
+    <br>
+    {{make}}
+    {{model}}
+    <br>
+    {{year}}
+  </div>
+  <form action="/cars/{{_id}}/delete" method="post">
+    <input class="submit" type="submit" value="Delete">
+  </form>
+</article>
+{{/each}}
